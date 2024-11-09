@@ -3,7 +3,7 @@ function InputBox({
   label,
   
   className = "",
-}) {jndf
+}) {
  
 
   return (
