@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { InputBox } from './components'
-import useCurrencyInfo from './hooks/useCurrencyInfo'
-import './App.css'
+import useCurrencyInfo  from './hooks/useCurrencyInfo'
+
 
 function App() {
     const [amount , setAmount] = useState(0)
@@ -10,7 +10,7 @@ function App() {
     const [convertedAmount , setcConvertedAmount] = useState(0)
     
     const currencyInfo = useCurrencyInfo(from)
-    const options = currencyInfo ? object.keys(currencyInfo) : [];
+    const options = currencyInfo ? Object.keys(currencyInfo) : [];
 
     const swap = () => {
       setFrom(to)
@@ -46,6 +46,7 @@ function App() {
                               currencyOptions={options}
                               onCurrencyChange={(currency)=> setAmount(amount)}
                               selectCurrency={from}
+                              onAmountChange={(amount)=>setAmount(amount)}
                               
                           />
                       </div>
